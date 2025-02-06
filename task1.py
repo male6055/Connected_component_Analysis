@@ -3,10 +3,12 @@ import cv2
 
 my_image = cv2.imread("gradient.png", 0)
 cv2.imshow("Original", my_image)
-cv2.waitKey(0)
+cv2.waitKey()
 
 h, w = my_image.shape[:2]
 out_image1 = np.zeros((h, w), dtype=np.uint8)
+out_image2 = np.zeros((h, w), dtype=np.uint8)
+out_image3 = np.zeros((h, w), dtype=np.uint8)
 
 for i in range(h):
     for j in range(w):
@@ -45,8 +47,31 @@ for i in range(h):
         elif 239 < p <= 255:
             out_image1[i, j] = 15
 
-#out_image1 = (out_image1 * 16).astype(np.uint8)
+
+
+
+# 4 level
+for i in range(h):
+    for j in range(w):
+        p = my_image[i, j]
+
+        if p <= 63:
+            out_image2[i, j] = 0
+        elif 63 < p <= 127:
+            out_image2[i, j] = 1
+        elif 127 < p <= 191:
+            out_image2[i, j] = 2
+        elif 191 < p <= 255:
+            out_image2[i, j] = 3
+
 
 cv2.imshow("16 Levels", out_image1)
+cv2.waitKey()
+
+
+cv2.imshow("4 Levels", out_image2)
+cv2.waitKey()
+
+cv2.imshow("1 Levels", out_image3)
 cv2.waitKey()
 cv2.destroyAllWindows()
