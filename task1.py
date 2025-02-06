@@ -48,5 +48,5 @@ for i in range(h):
 #out_image1 = (out_image1 * 16).astype(np.uint8)
 
 cv2.imshow("16 Levels", out_image1)
-cv2.waitKey(0)
+cv2.waitKey()
 cv2.destroyAllWindows()
