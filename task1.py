@@ -64,6 +64,17 @@ for i in range(h):
         elif 191 < p <= 255:
             out_image2[i, j] = 3
 
+# 1 level
+for i in range(h):
+    for j in range(w):
+        p = my_image[i, j]
+
+        if p <= 127:
+            out_image3[i, j] = 0
+        elif 127 < p <= 255:
+            out_image3[i, j] = 1
+
+
 
 cv2.imshow("16 Levels", out_image1)
 cv2.waitKey()
