@@ -48,8 +48,6 @@ for i in range(h):
             out_image1[i, j] = 15
 
 
-
-
 # 4 level
 for i in range(h):
     for j in range(w):
@@ -64,6 +62,7 @@ for i in range(h):
         elif 191 < p <= 255:
             out_image2[i, j] = 3
 
+
 # 1 level
 for i in range(h):
     for j in range(w):
@@ -76,13 +75,13 @@ for i in range(h):
 
 
 
-cv2.imshow("16 Levels", out_image1)
+cv2.imshow("16 Levels", out_image1*16)
 cv2.waitKey()
 
 
-cv2.imshow("4 Levels", out_image2)
+cv2.imshow("4 Levels", out_image2*64)
 cv2.waitKey()
 
-cv2.imshow("1 Levels", out_image3)
+cv2.imshow("1 Levels", out_image3*128)
 cv2.waitKey()
 cv2.destroyAllWindows()
