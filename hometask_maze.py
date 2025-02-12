@@ -118,7 +118,7 @@ if start_label == end_label and start_label > 0:
     # Save the solved maze
     output_path = "Solved_Maze.png"
     cv2.imwrite(output_path, solved_maze)
-    print(f"✅ Maze solved! Solution saved at {output_path}")
+    print(f" Maze solved! Solution saved at {output_path}")
 
 else:
-    print("❌ Maze is not connected, check for breaks in the path.")
+    print(" Maze is not connected, check for breaks in the path.")
